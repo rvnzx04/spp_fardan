@@ -28,6 +28,15 @@
 	<link rel="stylesheet" type="text/css" href="src/plugins/datatables/css/responsive.bootstrap4.min.css" />
 	<link rel="stylesheet" type="text/css" href="vendors/styles/style.css" />
 
+
+	<style>
+		@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
+		* {
+			font-family: 'Poppins',
+				sans-serif;
+		}
+	</style>
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=G-GBZ3SGGX85"></script>
 	<script>
@@ -103,22 +112,13 @@
 			</div>
 		</div>
 
-		<div class="user-info-dropdown">
-			<div class="dropdown">
-				<a class="dropdown-toggle" href="#" role="button" data-toggle="dropdown">
 
-					<img src="vendors/images/photo1.jpg" alt="" width="40px" />
-					</span>
-					<span class="user-name mt-3 mr-3">Hai Admin</span>
-				</a>
-				<div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
-					<a class="dropdown-item" href="profile.html"><i class="dw dw-user1"></i> Profile</a>
-					<a class="dropdown-item" href="profile.html"><i class="dw dw-settings2"></i> Setting</a>
-					<a class="dropdown-item" href="faq.html"><i class="dw dw-help"></i> Help</a>
-					<a class="dropdown-item" href="login.html"><i class="dw dw-logout"></i> Log Out</a>
-				</div>
-			</div>
-		</div>
+
+
+
+		<span class="user-name mt-3 mr-3">Hai <?= $_SESSION['username']; ?> <i class="icon-copy ion-android-happy mr-4"></i></span>
+
+
 
 	</div>
 	</div>

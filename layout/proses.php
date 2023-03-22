@@ -49,3 +49,18 @@ if (isset($_POST['tambah'])) {
         header('location:../tambah_siswa.php');
     }
 }
+// menambah pembayaran
+if (isset($_POST['simpan'])) {
+
+    $id_admin = $_POST['id_admin'];
+    $id_siswa = $_POST['id_siswa'];
+    $tgl_bayar = $_POST['tgl_bayar'];
+    $bln_bayar = $_POST['bln_bayar'];
+    $spp = $_POST['spp'];
+    $jml_bayar = $_POST['jml_bayar'];
+    $query = mysqli_query($conn, "INSERT INTO pembayaran VALUES(NULL, '$id_admin', '$id_siswa', '$tgl_bayar', '$bln_bayar', '$spp', '$jml_bayar','bayar')");
+    if ($query == true) {
+        $_SESSION['simpan'] = "Berhasil Melakukan Pembayaran";
+        header('location:../tabel_siswa.php');
+    }
+}

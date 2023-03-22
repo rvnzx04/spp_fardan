@@ -11,7 +11,8 @@ $query = mysqli_query($conn, "SELECT * FROM siswa WHERE nisn='$nis'");
 
 $userid = mysqli_fetch_array($query);
 $data = array(
-    'nama' =>  @$userid['nama']
+    'nama' =>  @$userid['nama'],
+    'id_siswa' =>  @$userid['id_siswa']
 );
 
 //tampil data
