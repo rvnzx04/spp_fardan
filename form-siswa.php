@@ -6,14 +6,14 @@ $random = rand(100000000, 200000000);
 ?>
 
 <!-- Default Basic Forms Start -->
-<div class="main-container">
+<div class="container">
     <div class="pd-ltr-20 xs-pd-20-10">
         <div class="min-height-200px">
             <div class="page-header">
                 <div class="row">
                     <div class="col-md-6 col-sm-12">
                         <div class="title">
-                            <h4>DataTable</h4>
+                            <h4>Data Siswa</h4>
                         </div>
                         <nav aria-label="breadcrumb" role="navigation">
                             <ol class="breadcrumb">
@@ -26,9 +26,7 @@ $random = rand(100000000, 200000000);
                             </ol>
                         </nav>
                     </div>
-                    <div class="col-md-6 col-sm-12 text-right">
-                        <a href="form-siswa.php" alt="modal" class="btn btn-primary"><i class="icon-copy fa fa-plus"></i> Tambah Siswa</a>
-                    </div>
+
                 </div>
 
             </div>

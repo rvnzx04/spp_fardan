@@ -5,7 +5,7 @@
 
 $no = 1;
 $query = mysqli_query($conn, "SELECT * FROM siswa JOIN kelas ON (kelas.id_kelas=siswa.id_jurusan) JOIN spp ON (spp.spp_id=siswa.id_thn_ajaran) ORDER BY id_siswa ASC");
-$view = mysqli_query($conn, "SELECT * FROM pembayaran JOIN spp ON (spp.spp_id=pembayaran.id_spp) JOIN admin ON (admin.id_admin = pembayaran.id_admin) JOIN siswa ON(siswa.id_siswa = pembayaran.id_siswa) JOIN kelas ON(kelas.id_kelas = siswa.id_jurusan) JOIN bulan ON (bulan.id_bulan = pembayaran.id_bulan) ORDER BY id_pembayaran ASC");
+$view = mysqli_query($conn, "SELECT * FROM pembayaran JOIN spp ON (spp.spp_id=pembayaran.id_spp) JOIN admin ON (admin.id_admin = pembayaran.id_admin) JOIN siswa ON(siswa.id_siswa = pembayaran.id_siswaFK) JOIN kelas ON(kelas.id_kelas = siswa.id_jurusan) JOIN bulan ON (bulan.id_bulan = pembayaran.id_bulan) ORDER BY id_pembayaran ASC");
 $nomor = 1;
 $random = rand(100000000, 200000000);
 
@@ -16,7 +16,8 @@ $random = rand(100000000, 200000000);
 ?>
 
 <!-- Export Datatable start -->
-<div class="main-container">
+
+<div class="pd-ltr-20 xs-pd-20-10">
     <div class="pd-ltr-20 xs-pd-20-10">
         <?php if (isset($_SESSION['simpan'])) :
         ?>
@@ -99,7 +100,7 @@ $random = rand(100000000, 200000000);
                                     <td><?= $result1['tahun_ajaran'] ?></td>
                                     <td>Rp.<?= number_format($result1['jumlah_bayar'], 0, ',', '.') ?></td>
                                     <td>
-                                        <a href="view.php?id=<?= $result1['id_siswa']; ?>" class="btn-sm btn-warning"><i class="icon-copy bi bi-eye-fill"></i></a>
+                                        <a href="view.php?history=<?= $result1['id_siswaFK'] ?>" class="btn-sm btn-warning"><i class="icon-copy bi bi-eye-fill"></i></a>
 
 
                                     </td>

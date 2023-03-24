@@ -9,7 +9,8 @@ $random = rand(100000000, 200000000);
 ?>
 
 <!-- Export Datatable start -->
-<div class="main-container">
+
+<div class="pd-ltr-20 xs-pd-20-10">
     <div class="pd-ltr-20 xs-pd-20-10">
         <div class="min-height-200px">
             <div class="page-header">
@@ -24,8 +25,7 @@ $random = rand(100000000, 200000000);
                                     <a href="index.html">Home</a>
                                 </li>
                                 <li class="breadcrumb-item active" aria-current="page">
-                                    DataTable
-                                </li>
+                                    Data Tahun ajaran </li>
                             </ol>
                         </nav>
                     </div>
@@ -41,13 +41,13 @@ $random = rand(100000000, 200000000);
             <!-- Simple Datatable start -->
             <div class="card-box mb-30">
                 <div class="pd-20">
-                    <h4 class="text-blue h4">Data Table Simple</h4>
+                    <h4 class="text-blue h4">Data Tahun ajaran</h4>
 
                 </div>
                 <div class="pb-20">
                     <table class="data-table table stripe hover nowrap table-bordered">
                         <thead>
-                            <tr>
+                            <tr class="text-center">
                                 <th class="table-plus datatable-nosort" width="5%">No</th>
                                 <th>Tahun Ajaran</th>
                                 <th>Biaya SPP</th>
@@ -60,7 +60,7 @@ $random = rand(100000000, 200000000);
                                 <tr class="text-center">
                                     <td class="table-plus"><?= $no++; ?></td>
                                     <td><?= $result['tahun_ajaran']; ?></td>
-                                    <td><?= $result['nominal']; ?></td>
+                                    <td>Rp.<?= number_format($result['nominal'], 0, ',', '.'); ?></td>
                                     <td>
 
 
@@ -69,7 +69,7 @@ $random = rand(100000000, 200000000);
                                         <button alt="modal" data-toggle="modal" data-target="#edit-modal<?= $no ?>" type="button" class="btn btn-success"><i class="dw dw-edit2"></i> Edit</button>
 
 
-                                        <button alt="modal" class="btn btn-danger"><i class="dw dw-edit2"></i> Delete</button>
+                                        <a href="layout/proses.php?hapus_spp=<?= $result['spp_id'] ?>" class=" btn btn-danger" onclick="return confirm('Apakah Anda Yakin ingin menghapus???')"><i class="dw dw-edit2"></i> Delete</a>
 
                                     </td>
                                 </tr>
@@ -92,11 +92,12 @@ $random = rand(100000000, 200000000);
                                                 <form method="post" action="layout/proses.php">
                                                     <div class="mb-3">
                                                         <label for="recipient-name" class="col-form-label">Tahun Ajaran:</label>
-                                                        <input name="thn_ajaran" type="text" class="form-control" id="recipient-name" value="<?= $result['tahun_ajaran']; ?>" readonly>
+                                                        <input name="thn_ajaran" type="text" class="form-control" id="recipient-name" value="<?= $result['tahun_ajaran']; ?>" required>
+                                                        <input type="hidden" name="spp_id" value="<?= $result['spp_id'] ?>">
                                                     </div>
                                                     <div class="mb-3">
                                                         <label for="recipient-name" class="col-form-label">Biaya SPP:</label>
-                                                        <input name="spp" type="text" class="form-control" id="recipient-name" value="<?= $result['nominal']; ?>" readonly>
+                                                        <input name="spp" type="text" class="form-control" id="recipient-name" value="<?= $result['nominal']; ?>" required>
                                                     </div>
 
                                             </div>
@@ -104,9 +105,10 @@ $random = rand(100000000, 200000000);
                                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">
                                                     Close
                                                 </button>
-                                                <button type="submit" name="submit2" class="btn btn-success">
-                                                    Tambah
+                                                <button type="submit" name="edit_spp" class="btn btn-success">
+                                                    Simpan
                                                 </button>
+                                                </form>
                                             </div>
                                         </div>
                                     </div>

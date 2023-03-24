@@ -13,10 +13,11 @@ if (isset($_GET['id'])) {
     $jurusan = $result['jurusan'];
 }
 ?>
-?>
+
 <style></style>
 <!-- Export Datatable start -->
-<div class="main-container">
+
+<div class="pd-ltr-20 xs-pd-20-10">
     <div class="pd-ltr-20 xs-pd-20-10">
         <div class="min-height-200px">
             <div class="page-header">
@@ -37,6 +38,9 @@ if (isset($_GET['id'])) {
                         </nav>
                     </div>
                     <div class="col-md-6 col-sm-12 text-right">
+                        <a href="tabel_siswa.php" class="btn btn-secondary">
+                            <span class="icon-copy ti-angle-double-left"></span> Kembali</button>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -78,7 +82,7 @@ if (isset($_GET['id'])) {
                                         <select class="custom-select" name="bln_bayar" name="spp">
                                             <option selected="">--Pilih Bulan--</option>
                                             <?php
-                                            $sql = mysqli_query($conn, "SELECT * FROM bulan WHERE id_bulan NOT IN(SELECT id_bulan FROM pembayaran WHERE id_siswa = '$id_siswa')");
+                                            $sql = mysqli_query($conn, "SELECT * FROM bulan WHERE id_bulan NOT IN(SELECT id_bulan FROM pembayaran WHERE id_siswaFK = '$id_siswa')");
 
                                             while ($dt = mysqli_fetch_array($sql)) {
                                             ?>
@@ -140,7 +144,20 @@ if (isset($_GET['id'])) {
                     }
                 </script>
 
+                <!-- welcome modal end -->
+                <!-- js -->
+                <script src="vendors/scripts/core.js"></script>
+                <script src="vendors/scripts/script.min.js"></script>
+                <script src="vendors/scripts/process.js"></script>
+                <script src="vendors/scripts/layout-settings.js"></script>
 
+
+                <!-- buttons for Export datatable -->
+                <script src="src/plugins/datatables/js/dataTables.buttons.min.js"></script>
+                <script src="src/plugins/datatables/js/buttons.bootstrap4.min.js"></script>
+                <script src="src/plugins/datatables/js/buttons.print.min.js"></script>
+                <script src="src/plugins/datatables/js/buttons.html5.min.js"></script>
+                <script src="src/plugins/datatables/js/buttons.flash.min.js"></script>
                 </body>
 
                 </html>
