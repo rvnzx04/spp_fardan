@@ -39,7 +39,7 @@ $select_rows4 = mysqli_query($conn, "SELECT * FROM pembayaran ") or die('query f
 <div class="pd-ltr-20 xs-pd-20-10">
 	<div class="min-height-200px">
 
-		<div class="page-header">
+		<div class="page-header" data-aos="fade-right" data-aos-duration="1000">
 			<div class="row">
 				<div class="col-md-6 col-sm-12">
 					<div class="title">
@@ -65,7 +65,7 @@ $select_rows4 = mysqli_query($conn, "SELECT * FROM pembayaran ") or die('query f
 		<div class="title pb-20">
 
 
-			<div class="row pb-10">
+			<div class="row pb-10" data-aos="fade-right" data-aos-duration="1000">
 				<div class="col-xl-3 col-lg-3 col-md-6 mb-20">
 					<div class="card-box height-100-p widget-style3">
 						<div class="d-flex flex-wrap">

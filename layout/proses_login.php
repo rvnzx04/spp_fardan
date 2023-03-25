@@ -15,7 +15,7 @@ if (isset($_POST['submit'])) {
         $_SESSION['id_siswa'] = $user_valid['id_siswa'];
         $_SESSION['user'] = $user_valid['nama'];
         $_SESSION['berhasil'] = "login berhasil";
-        header("Location:../user/index.php");
+        header("Location:../tampilan_user/index.php");
     } else {
         $_SESSION['error'] = "nis anda tidak benar silahkan periksa kembali!";
         header('location:../login.php');

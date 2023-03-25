@@ -14,7 +14,7 @@ $random = rand(100000000, 200000000);
 <div class="xs-pd-20-10 pd-ltr-20">
     <div class="pd-ltr-20 xs-pd-20-10">
         <div class="min-height-200px">
-            <div class="page-header">
+            <div class="page-header" data-aos="fade-right" data-aos-duration="1000">
                 <div class="row">
                     <div class="col-md-6 col-sm-12">
                         <div class="title">
@@ -38,7 +38,7 @@ $random = rand(100000000, 200000000);
 
             </div>
             <!-- Simple Datatable start -->
-            <div class="card-box mb-30">
+            <div class="card-box mb-30" data-aos="fade-right" data-aos-duration="1000">
                 <div class="pd-20">
                     <h4 class="text-blue h4">Data Siswa</h4>
 

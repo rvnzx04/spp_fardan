@@ -12,9 +12,11 @@ require "layout/config.php";
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login | Pasien</title>
+    <title>Login | Siswa</title>
+
     <link rel="stylesheet" href="src/plugins/bootstrap/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="register.png">
 
 
     <link rel="stylesheet" type="text/css" href="vendors/styles/icon-font.min.css" />
