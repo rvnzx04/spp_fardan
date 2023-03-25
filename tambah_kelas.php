@@ -36,9 +36,9 @@ $query = mysqli_query($conn, "SELECT * FROM kelas ORDER BY id_kelas ASC");
 
 			</div>
 			<!-- Simple Datatable start -->
-			<div class="card-box mb-30" data-aos="fade-right" data-aos-duration="1000">
+			<div class="card-box mb-30">
 				<div class="pd-20">
-					<h4 class="text-blue h4">Data Table Simple</h4>
+					<h4 class="text-blue h4">Data Admin</h4>
 
 				</div>
 				<div class="pb-20">
@@ -47,7 +47,8 @@ $query = mysqli_query($conn, "SELECT * FROM kelas ORDER BY id_kelas ASC");
 							<tr class="text-center">
 								<th class="table-plus datatable-nosort" width="5%">No</th>
 								<th width="30%">Kelas</th>
-								<th width="45%">Jurusan</th>
+								<th width="50%">Jurusan</th>
+
 								<th class="datatable-nosort">Action</th>
 							</tr>
 						</thead>
@@ -59,9 +60,10 @@ $query = mysqli_query($conn, "SELECT * FROM kelas ORDER BY id_kelas ASC");
 									<td><?= $result['kelas']; ?></td>
 									<td><?= $result['jurusan']; ?></td>
 
+
 									<td>
-										<button alt="modal" data-toggle="modal" data-target="#edit-modal<?= $no ?>" type="button" class="btn-sm btn-success"><i class="icon-copy bi bi-pencil-square"></i> Edit</button>
-										<a href="layout/proses.php?hapus_kelas=<?= $result['id_kelas']; ?>" class="btn-sm btn-danger" onclick="return confirm('Apakah Anda Yakin ingin menghapus???')"><i class="icon-copy bi bi-trash-fill"></i>Hapus</button>
+										<button alt="modal" data-toggle="modal" data-target="#edit-modal<?= $no ?>" type="button" class="btn btn-success"><i class="dw dw-edit2"></i> Edit</button>
+										<a href="layout/proses.php?hapus_kelas=<?= $result['id_kelas']; ?>" class="btn btn-danger" onclick="return confirm('Apakah Anda Yakin ingin menghapus???')"><i class="icon-copy bi bi-trash-fill"></i> Delete</button>
 									</td>
 								</tr>
 
@@ -73,7 +75,7 @@ $query = mysqli_query($conn, "SELECT * FROM kelas ORDER BY id_kelas ASC");
 										<div class="modal-content">
 											<div class="modal-header">
 												<h4 class="modal-title" id="myLargeModalLabel">
-													Data Kelas
+													Data Admin
 												</h4>
 												<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
 													×
@@ -106,69 +108,69 @@ $query = mysqli_query($conn, "SELECT * FROM kelas ORDER BY id_kelas ASC");
 												<button type="button" class="btn btn-secondary" data-dismiss="modal">
 													Close
 												</button>
-												<button type="submit" name="edit_kelas" class="btn btn-primary">
-													Tambah
+												<button type="submit" name="edit_kelas" class="btn btn-success">
+													Simpan
 												</button>
 												</form>
 											</div>
 										</div>
 									</div>
 								</div>
+
+								<!-- Simple Datatable End -->
+
+
+							<?php } ?>
+						</tbody>
+					</table>
 				</div>
 			</div>
-
-		<?php } ?>
-		</tbody>
-		</table>
-		</div>
-	</div>
-	<!-- Simple Datatable End -->
-
-	<!-- Medium modal -->
+			<!-- Simple Datatable End -->
+			<!-- Medium modal -->
 
 
-	<div class="modal fade" id="Medium-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-		<div class="modal-dialog modal-dialog-centered">
-			<div class="modal-content">
-				<div class="modal-header">
-					<h4 class="modal-title" id="myLargeModalLabel">
-						Data Kelas
-					</h4>
-					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-						×
-					</button>
-				</div>
-				<div class="modal-body">
-					<form method="post" action="layout/proses.php">
-						<div class="mb-3">
-							<label for="recipient-name" class="col-form-label">kelas:</label>
-							<select class="custom-select col-12" name="kelas">
-								<option selected="">--Pilih Kelas--</option>
-								<option value="XII">XII</option>
-								<option value="X">XI</option>
-								<option value="X">X</option>
-							</select>
+			<div class="modal fade" id="Medium-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+				<div class="modal-dialog modal-dialog-centered">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h4 class="modal-title" id="myLargeModalLabel">
+								Data Kelas
+							</h4>
+							<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+								×
+							</button>
 						</div>
-						<div class="mb-3">
-							<label for="recipient-name" class="col-form-label">Jurusan:</label>
-							<input name="jurusan" type="text" class="form-control" id="recipient-name">
-						</div>
+						<div class="modal-body">
+							<form method="post" action="layout/proses.php">
+								<div class="mb-3">
+									<label for="recipient-name" class="col-form-label">kelas:</label>
+									<select class="custom-select col-12" name="kelas">
+										<option selected="">--Pilih Kelas--</option>
+										<option value="XII">XII</option>
+										<option value="X">XI</option>
+										<option value="X">X</option>
+									</select>
+								</div>
+								<div class="mb-3">
+									<label for="recipient-name" class="col-form-label">Jurusan:</label>
+									<input name="jurusan" type="text" class="form-control" id="recipient-name">
+								</div>
 
-				</div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-secondary" data-dismiss="modal">
-						Close
-					</button>
-					<button type="submit" name="submit" class="btn btn-primary">
-						Tambah
-					</button>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-secondary" data-dismiss="modal">
+								Close
+							</button>
+							<button type="submit" name="submit" class="btn btn-primary">
+								Tambah
+							</button>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-</div>
-</div>
 
-<!-- Datatable Setting js -->
 
-<?php require 'layout/footer.php'; ?>
+
+	<?php require 'layout/footer.php'; ?>

@@ -39,15 +39,39 @@ if (!isset($_SESSION['id_admin'])) {
 			font-family: 'Poppins',
 				sans-serif;
 		}
+
+
+		body {
+			background-color: #e6e6e6;
+		}
 	</style>
 
 </head>
 
 <body>
 
-	<nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm fixed-top" style="position: sticky;">
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top py-3" data-aos="fade-down" data-aos-duration="1000">
+		<div class="container">
+			<img src="../bm3.png" class="img-rounded" alt="" srcset="" width="4%"> <a class="navbar-brand ml-2" href="#">SMK Bina Mandiri Multimedia</a>
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse ms-auto" id="navbarNavAltMarkup">
+				<div class="navbar-nav ml-auto" style="text-transform: uppercase;">
+					<a class="nav-link" aria-current="page" href="index.php">Dashboard</a>
+					<a class="nav-link" href="index.php#services">Prestasi</a>
+					<a class="nav-link" href="#">About Us</a>
+					<a class="nav-link" href="#">Ekstrakulikuler</a>
+					<a class="nav-link active" href="#">History</a>
+
+				</div>
+			</div>
+		</div>
+	</nav>
+
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm fixed-top py-3" style="position: sticky;">
 		<div class="container-sm">
-			<img src="register.png" alt="" srcset="" width="6%">
+			<img src="register.png" class="img-rounded" style="margin-right: 18px;" alt="" srcset="" width="4%"> <a class="navbar-brand" href="#" style="color: white;">SMK Bina Mandiri Multimedia</a>
 			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
 			</button>
@@ -75,7 +99,7 @@ if (!isset($_SESSION['id_admin'])) {
 						<a class="nav-link" href="laporan.php">LAPORAN</a>
 					</li>
 					<li class="nav-item">
-						<a class="btn btn-outline-danger" href="layout/proses_logout.php">LOGOUT <i class="icon-copy ion-arrow-right-c"></i></a>
+						<a class="btn btn-outline-danger" href="layout/proses_logout.php">LOGOUT</a>
 					</li>
 
 				</ul>

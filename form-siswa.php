@@ -96,7 +96,7 @@ $random = rand(100000000, 200000000);
                         <label class="col-sm-12 col-md-2 col-form-label">Tahun Ajaran</label>
                         <div class="col-sm-12 col-md-10">
                             <select class="custom-select col-12" name="thn_ajaran">
-                                <option selected="">--Pilih Jurusan--</option>
+                                <option selected="">--Pilih Spp--</option>
 
                                 <?php
                                 $sql = mysqli_query($conn, "SELECT * FROM spp ORDER BY spp_id ASC") or die(mysqli_error($conn));

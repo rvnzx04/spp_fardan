@@ -74,13 +74,13 @@ $random = rand(100000000, 200000000);
                         <thead>
                             <tr class="text-center">
                                 <th class="table-plus datatable-nosort" width="5%">No</th>
-                                <th>Admin</th>
+                                <th>Nis</th>
                                 <th>Nama</th>
                                 <th>Kelas</th>
-                                <th>Tangggal Bayar</th>
+
                                 <th>Bulan</th>
                                 <th>Tahun Ajaran</th>
-                                <th>Jumlah Bayar</th>
+
                                 <th class="datatable-nosort">Action</th>
                             </tr>
                         </thead>
@@ -92,13 +92,13 @@ $random = rand(100000000, 200000000);
 
                                 <tr class="text-center">
                                     <td class="table-plus"><?= $no++; ?></td>
-                                    <td><?= $result1['username'] ?></td>
+                                    <td><?= $result1['nisn'] ?></td>
                                     <td><?= $result1['nama'] ?></td>
                                     <td><?= $result1['kelas'], " " . $result1['jurusan']  ?></td>
-                                    <td><?= $result1['tgl_bayar'] ?></td>
+
                                     <td><?= $result1['nama_bulan'] ?></td>
                                     <td><?= $result1['tahun_ajaran'] ?></td>
-                                    <td>Rp.<?= number_format($result1['jumlah_bayar'], 0, ',', '.') ?></td>
+
                                     <td>
                                         <a href="view.php?history=<?= $result1['id_siswaFK'] ?>" class="btn-sm btn-warning"><i class="icon-copy bi bi-eye-fill"></i></a>
 
