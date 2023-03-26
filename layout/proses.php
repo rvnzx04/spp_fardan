@@ -81,7 +81,6 @@ if (isset($_GET['hapus_siswa'])) {
 
 // menambah pembayaran
 if (isset($_POST['simpan'])) {
-
     $id_admin = $_POST['id_admin'];
     $id_siswa = $_POST['id_siswa'];
     $tgl_bayar = $_POST['tgl_bayar'];
