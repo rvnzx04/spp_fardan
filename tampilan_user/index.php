@@ -10,6 +10,7 @@ if (!isset($_SESSION['user'])) {
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
   <meta name="description" content="" />
+
   <meta name="author" content="" />
   <title>SMK BM3</title>
   <!-- Favicon-->
@@ -50,7 +51,7 @@ if (!isset($_SESSION['user'])) {
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
           <li class="nav-item">
-            <a class="nav-link" href="#services">Dashboard</a>
+            <a class="nav-link" href="#" onClick="document.location.reload(true)">Dashboard</a>
           </li>
 
           <li class="nav-item">
@@ -61,14 +62,14 @@ if (!isset($_SESSION['user'])) {
             <a class="nav-link" href="history.php">History</a>
           </li>
           <li class="nav-item">
-            <a class="btn btn-outline-danger" href="history.php">Logout</a>
+            <a class="btn btn-outline-danger" href="proses_logout.php" onclick="return confirm('Apakah Anda Yakin ingin Keluar???')">Logout</a>
           </li>
         </ul>
       </div>
     </div>
   </nav>
   <!-- Masthead-->
-  <header class="masthead">
+  <header class="masthead" id="#home">
     <div class="container" data-aos="fade-up-right" data-aos-duration="1000">
       <div class="masthead-subheading">
         Welcome <?= $_SESSION['user']; ?> To SMK BINA MANDIRI MULTIMEDIA

@@ -3,6 +3,13 @@ $id_siswa = $_SESSION['id_siswa'];
 $query1 =  mysqli_query($conn, "SELECT * FROM pembayaran JOIN spp ON (spp.spp_id=pembayaran.id_spp) JOIN admin ON (admin.id_admin = pembayaran.id_admin) JOIN siswa ON(siswa.id_siswa = pembayaran.id_siswaFK) JOIN kelas ON(kelas.id_kelas = siswa.id_jurusan) JOIN bulan ON (bulan.id_bulan = pembayaran.id_bulan)  WHERE id_siswa  ='$id_siswa';");
 $tampil = mysqli_fetch_assoc($query1);
 $nama = $tampil['nama'];
+$cek = mysqli_num_rows($query1);
+if (empty($cek)) {
+    echo "<script>alert('Data Belum Tersedia!');
+                document.location.href = 'index.php';</script>";
+    // header('location:lihat-produk.php');
+    echo "('location:index.php')";
+}
 
 $no = 1; ?>
 
@@ -61,10 +68,13 @@ $no = 1; ?>
             <div class="collapse navbar-collapse ms-auto" id="navbarNavAltMarkup">
                 <div class="navbar-nav ml-auto" style="text-transform: uppercase;">
                     <a class="nav-link" aria-current="page" href="index.php">Dashboard</a>
-                    <a class="nav-link" href="index.php#services">Prestasi</a>
-                    <a class="nav-link" href="#">About Us</a>
-                    <a class="nav-link" href="#">Ekstrakulikuler</a>
+
+                    <a class="nav-link" href="index.php#about">About Us</a>
+                    <a class="nav-link" href="index.php#team">Ekstrakulikuler</a>
                     <a class="nav-link active" href="#">History</a>
+                    <li class="nav-item">
+                        <a class="btn btn-outline-danger" href="proses_logout.php" onclick="return confirm('Apakah Anda Yakin ingin Keluar???')">Logout</a>
+                    </li>
 
                 </div>
             </div>

@@ -44,6 +44,16 @@ if (!isset($_SESSION['id_admin'])) {
 		body {
 			background-color: #e6e6e6;
 		}
+
+		@media print {
+
+			.print {
+				display: none;
+				text-align: center;
+			}
+
+
+		}
 	</style>
 
 </head>
@@ -78,11 +88,11 @@ if (!isset($_SESSION['id_admin'])) {
 			<div class="collapse navbar-collapse" id="navbarNav">
 				<ul class="navbar-nav ml-auto">
 					<li class="nav-item">
-						<a class="nav-link active" aria-current="page" href="index.php">DASHBOARD</a>
+						<a class="nav-link <?= $active == 'dashboard' ? 'active' : '' ?>" aria-current="page" href="index.php">DASHBOARD</a>
 					</li>
 
 					<li class="nav-item dropdown">
-						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-expanded="false">
+						<a class="nav-link <?= $active == 'data_master' ? 'active' : '' ?> dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-expanded="false">
 							DATA MASTER
 						</a>
 						<ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
@@ -93,13 +103,13 @@ if (!isset($_SESSION['id_admin'])) {
 						</ul>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="tabel_siswa.php">PEMBAYARAN</a>
+						<a class="nav-link <?= $active == 'pembayaran' ? 'active' : '' ?>" href="tabel_siswa.php">PEMBAYARAN</a>
 					</li>
 					<li class="nav-item mr-3">
-						<a class="nav-link" href="laporan.php">LAPORAN</a>
+						<a class="nav-link <?= $active == 'laporan' ? 'active' : '' ?>" href="laporan.php">LAPORAN</a>
 					</li>
 					<li class="nav-item">
-						<a class="btn btn-outline-danger" href="layout/proses_logout.php">LOGOUT</a>
+						<a class="btn btn-outline-danger" href="layout/proses_logout.php" onclick="return confirm('Apakah Anda Yakin ingin Keluar???')">LOGOUT</a>
 					</li>
 
 				</ul>

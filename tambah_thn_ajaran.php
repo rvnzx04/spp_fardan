@@ -1,11 +1,9 @@
-<?php include 'layout/header.php';
-
-
+<?php
+$active = 'data_master';
+include 'layout/header.php';
 $no = 1;
 $query = mysqli_query($conn, "SELECT * FROM spp ORDER BY spp_id ASC");
-
 $random = rand(100000000, 200000000);
-
 ?>
 
 <!-- Export Datatable start -->

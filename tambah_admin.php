@@ -1,4 +1,6 @@
-<?php include 'layout/header.php';
+<?php
+$active = 'data_master';
+include 'layout/header.php';
 
 
 $no = 1;

@@ -1,4 +1,6 @@
-<?php include 'layout/header.php';
+<?php
+$active = 'data_master';
+include 'layout/header.php';
 $no = 1;
 $query = mysqli_query($conn, "SELECT * FROM siswa JOIN kelas ON (kelas.id_kelas=siswa.id_jurusan) JOIN spp ON (spp.spp_id=siswa.id_thn_ajaran) ORDER BY id_siswa ASC");
 

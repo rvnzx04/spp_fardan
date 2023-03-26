@@ -1,5 +1,6 @@
-<?php include 'layout/header.php';
-
+<?php
+$active = 'dashboard';
+include 'layout/header.php';
 
 $select_rows = mysqli_query($conn, "SELECT * FROM siswa ") or die('query failed');
 $row_count = mysqli_num_rows($select_rows);
@@ -11,9 +12,6 @@ $select_rows3 = mysqli_query($conn, "SELECT * FROM kelas ") or die('query failed
 $row_count3 = mysqli_num_rows($select_rows3);
 
 $select_rows4 = mysqli_query($conn, "SELECT * FROM pembayaran ") or die('query failed');
-
-
-
 ?>
 <style>
 	body {

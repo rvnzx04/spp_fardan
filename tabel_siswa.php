@@ -1,4 +1,6 @@
-<?php include 'layout/header.php';
+<?php
+$active = 'pembayaran';
+include 'layout/header.php';
 
 
 
@@ -77,7 +79,6 @@ $random = rand(100000000, 200000000);
                                 <th>Nis</th>
                                 <th>Nama</th>
                                 <th>Kelas</th>
-
                                 <th>Bulan</th>
                                 <th>Tahun Ajaran</th>
 

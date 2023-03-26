@@ -1,18 +1,10 @@
-<?php include 'layout/header.php';
-
-
-
-
+<?php
+$active = 'laporan';
+include 'layout/header.php';
 $no = 1;
 $query = mysqli_query($conn, "SELECT * FROM siswa JOIN kelas ON (kelas.id_kelas=siswa.id_jurusan) JOIN spp ON (spp.spp_id=siswa.id_thn_ajaran) ORDER BY id_siswa ASC");
-
 $nomor = 1;
 $random = rand(100000000, 200000000);
-
-
-// menambah siswa
-
-
 ?>
 
 <!-- Export Datatable start -->
@@ -36,7 +28,7 @@ $random = rand(100000000, 200000000);
 
 
         <form method="POST">
-            <div class="card py-4 shadow-sm">
+            <div class="card py-4 shadow-sm print">
                 <h4 class="text-center">CARI BERDASARKAN TANGGAL</h4>
                 <h2 class=" pb-4 border-bottom"></h2>
                 <tr>
@@ -63,15 +55,18 @@ $random = rand(100000000, 200000000);
         </form>
         <div class="card-box mb-30 mt-3">
             <div class="pd-20">
-                <h4 class="text-blue h4">Data Siswa</h4>
+                <div class="d-flex justify-content-between">
+                    <h4 class="text-blue h4">Data Laporan Pembayaran</h4>
+                    <button type="button" class="btn-sm btn-success print" onclick="window.print()">Print Laporan <i class="icon-copy dw dw-print"></i></button>
+                </div>
 
             </div>
             <div class="pb-20">
-                <table class="data-table table stripe hover nowrap table-bordered">
+                <table class=" table stripe hover nowrap table-bordered">
                     <thead>
 
                         <tr class="text-center">
-                            <th class="table-plus datatable-nosort" width="5%">No</th>
+                            <th class="table-plus" width="5%">No</th>
                             <th>Admin</th>
                             <th>Nama</th>
                             <th>Kelas</th>

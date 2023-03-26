@@ -31,7 +31,7 @@
 
 <footer>
     <div class="text-center">
-        <a class="text-center">Hai <?= $_SESSION['username'] ?></a>
+        <a class="text-center print">Hai <?= $_SESSION['username'] ?></a>
     </div>
 </footer>
 </body>
