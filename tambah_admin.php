@@ -171,15 +171,15 @@ $query = mysqli_query($conn, "SELECT * FROM admin ORDER BY id_admin ASC");
                             <form method="post" action="layout/proses.php">
                                 <div class="mb-3">
                                     <label for="recipient-name" class="col-form-label">Username:</label>
-                                    <input name="username" type="text" class="form-control" id="recipient-name">
+                                    <input name="username" type="text" class="form-control" id="recipient-name" required>
                                 </div>
                                 <div class="mb-3">
                                     <label for="recipient-name" class="col-form-label">Email:</label>
-                                    <input name="email" type="email" class="form-control" id="recipient-name">
+                                    <input name="email" type="email" class="form-control" id="recipient-name" required>
                                 </div>
                                 <div class="mb-3">
                                     <label for="recipient-name" class="col-form-label">Password:</label>
-                                    <input name="password" type="password" class="form-control" id="recipient-name">
+                                    <input name="password" type="password" class="form-control" id="recipient-name" required>
                                 </div>
                         </div>
                         <div class="modal-footer">

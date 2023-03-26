@@ -156,7 +156,7 @@ $query = mysqli_query($conn, "SELECT * FROM kelas ORDER BY id_kelas ASC");
 								</div>
 								<div class="mb-3">
 									<label for="recipient-name" class="col-form-label">Jurusan:</label>
-									<input name="jurusan" type="text" class="form-control" id="recipient-name">
+									<input name="jurusan" type="text" class="form-control" id="recipient-name" required>
 								</div>
 
 						</div>
